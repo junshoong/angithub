@@ -1,3 +1,4 @@
+sudo: required
 language: node_js
 node_js:
     - "7"
@@ -13,4 +14,4 @@ before_script:
     - ng build --prod --base-href "https://junshoong.github.io/angithub/"
 
 script:
-    - angular-cli-ghpages --repo=https://GH_TOKEN@github.com/junshoong/angithub.git
+    - sudo angular-cli-ghpages --repo=https://GH_TOKEN@github.com/junshoong/angithub.git
