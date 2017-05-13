@@ -8,5 +8,9 @@ env:
 install:
     - npm install
     - npm install -g angular-cli-ghpages
+
+before_script:
+    - ng build --prod --base-href "https://junshoong.github.io/angithub/"
+
 script:
     - angular-cli-ghpages --repo=https://GH_TOKEN@github.com/junshoong/angithub.git
