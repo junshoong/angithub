@@ -1,4 +1,3 @@
-sudo: required
 language: node_js
 node_js:
     - "7"
@@ -7,6 +6,7 @@ env:
     secure: uf9EqJmFhzEdwXXIYFnWtoc2cHibEAo9qMBGzkO5nqz0tbBJtZf2UAMzO9CpsaH+RQxz5UnolinGGIAHwruFxjCcYlaCGVtM8y1bbCcZPzhSqX6khwflvIaSYQzzBfiZEOwktz3a5cY8jOmAG9zNFIdnS6LNxWAJqfFV21VHldgs3HEg8BjPScME4ybRXCRNg8dYcyxqaGdPTxfonqOnX1L4beCUeIzqpJpnsnhPelkCkYIYYiW6gf8I2g8JrKMgfYRXk3nCBr6ooD0MjdgDSDAllfwC6Uh807R9dwwFwxOKJOaxxVt92qYtrEOLEEMM21xcSpU/QEarAfQw6Q+ZX8rsVwTGxwmmqb9fAv7WEOYjNbtqrYR7xWD49jTAnDrvPoe0W/RFMgp96zGNg0JDkIfr1jDTgqlch4ARsxWtwnWsoNFFCGPXdCaTCiwYQM/DjAS+fRyX6xmKOf3UWmK5OW2JJxEsz2UMTm3Fle/P9tJ9ob+YC9IxZsMp73rqkdh48VMBhuG4gHH4kWuvHO7orbhsrEZdF1wCNFFLrk18AqkdJ5pq0JrkzlXiO0SyRQ0j1T9btfIpGElPkuhsnMVVTLWrMZVoDqaujTt7WN7g6vLiwwuW3InBlefnk4Opun+D/g0KA+taDCyRY82J6jnbO2BCX1SmK4Vll9p4BUZvnCA=
 
 install:
+    - npm install -g @angular/cli
     - npm install
     - npm install -g angular-cli-ghpages
 
@@ -14,4 +14,8 @@ before_script:
     - ng build --prod --base-href "https://junshoong.github.io/angithub/"
 
 script:
-    - sudo angular-cli-ghpages --repo=https://GH_TOKEN@github.com/junshoong/angithub.git
+    - sudo angular-cli-ghpages --repo=https://GH_TOKEN@github.com/junshoong/angithub.git --name="Travis deploy" --email=noreply@example.com
+
+branches:
+    only:
+        - master
