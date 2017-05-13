@@ -14,7 +14,7 @@ before_script:
     - ng build --prod --base-href "https://junshoong.github.io/angithub/"
 
 script:
-    - sudo angular-cli-ghpages --repo=https://GH_TOKEN@github.com/junshoong/angithub.git --name="Travis deploy" --email=noreply@example.com
+    - angular-cli-ghpages --repo=https://GH_TOKEN@github.com/junshoong/angithub.git --name="Travis deploy" --email=noreply@example.com
 
 branches:
     only:
